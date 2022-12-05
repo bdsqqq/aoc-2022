@@ -20,13 +20,13 @@ const layers = stacksInput
 layers.pop();
 
 const stacks: string[][] = new Array(layers[0].length);
-layers.reverse().forEach((layer) => {
+layers.forEach((layer) => {
   layer.forEach((char, i) => {
     if (char !== " ") {
       if (!stacks[i]?.length) {
         stacks[i] = [];
       }
-      stacks[i].push(char);
+      stacks[i].unshift(char);
     }
   });
 });
@@ -44,7 +44,6 @@ const instructions = instructionsInput
   });
 
 instructions.forEach((instruction) => {
-  console.log(stacks);
   for (let i = 0; i < instruction.amount; i++) {
     stacks[instruction.end - 1].push(
       stacks[instruction.start - 1].pop() ||
