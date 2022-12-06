@@ -1,5 +1,3 @@
-// Find the item type that appears in both compartments of each rucksack. What is the sum of the priorities of those item types?
-
 import * as p from "https://deno.land/std@0.165.0/path/mod.ts";
 import { _format } from "https://deno.land/std@0.165.0/path/_util.ts";
 const input = await Deno.readTextFile(
